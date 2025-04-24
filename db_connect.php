@@ -1,9 +1,9 @@
 <?php
 // Load database credentials from environment variables
-$db_host = getenv("DB_HOST") ?: "sql108.infinityfree.com";
-$db_user = getenv("DB_USER") ?: "if0_38826873";
-$db_pass = getenv("DB_PASSWORD") ?: "Lohitaksh1619";
-$db_name = getenv("DB_NAME") ?: "if0_38826873_np_solutions_db";
+$db_host = getenv("DB_HOST") ?: "sql3.freesqldatabase.com";
+$db_user = getenv("DB_USER") ?: "sql3775289";
+$db_pass = getenv("DB_PASSWORD") ?: "tNpcvhvXww";
+$db_name = getenv("DB_NAME") ?: "sql3775289";
 
 // Create connection
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);

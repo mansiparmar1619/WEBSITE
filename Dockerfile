@@ -1,14 +1,25 @@
 # Use the official PHP-Apache image
 FROM php:8.2-apache
 
-# Enable Apache mod_rewrite (useful for routing)
+# Install MySQLi extension and dependencies
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip \
+    && docker-php-ext-install mysqli \
+    && docker-php-ext-enable mysqli
+
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
-# Copy all project files into the Apache server root
+# Copy app code into the container
 COPY . /var/www/html/
 
 # Set working directory
 WORKDIR /var/www/html/
 
-# Open port 80
+# Expose port 80
 EXPOSE 80

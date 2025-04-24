@@ -1,0 +1,55 @@
+[2025-04-23 18:05:28] Form submission received.
+[2025-04-23 18:05:28] Successfully connected to the database.
+[2025-04-23 18:05:28] Received data: name=mansi parmar, email=mansiparmar1619@gmail.com, phone=9881139442, username=mansi parmar, password=***, confirm_password=***, terms=1
+[2025-04-23 18:05:28] Password hashed.
+[2025-04-23 18:05:28] Check query: SELECT id FROM users WHERE username = 'mansi parmar' OR email = 'mansiparmar1619@gmail.com'
+[2025-04-23 18:05:28] Insert query: INSERT INTO users (name, email, phone, username, password, terms) 
+                     VALUES ('mansi parmar', 'mansiparmar1619@gmail.com', '9881139442', 'mansi parmar', '$2y$10$WP.YmvRHRJTE5fYXmrTofOyozwG7Oll8N6/k34T8GrUn3oWifbLKO', 1)
+[2025-04-23 18:05:45] Form submission received.
+[2025-04-23 18:05:45] Successfully connected to the database.
+[2025-04-23 18:05:45] Received data: name=mansi parmar, email=mansiparmar1619@gmail.com, phone=9881139442, username=mansi parmar, password=***, confirm_password=***, terms=1
+[2025-04-23 18:05:45] Password hashed.
+[2025-04-23 18:05:45] Check query: SELECT id FROM users WHERE username = 'mansi parmar' OR email = 'mansiparmar1619@gmail.com'
+[2025-04-23 18:05:45] Insert query: INSERT INTO users (name, email, phone, username, password, terms) 
+                     VALUES ('mansi parmar', 'mansiparmar1619@gmail.com', '9881139442', 'mansi parmar', '$2y$10$u32wXEsgxexPxqsMD/Iykepn7xLYkVrwQkr09tfual0nm4ZoFcoT2', 1)
+[2025-04-23 18:22:20] Form submission received.
+[2025-04-23 18:22:20] Successfully connected to the database.
+[2025-04-23 18:22:20] Received data: name=mansi parmar, email=mansiparmar1619@gmail.com, phone=9881139442, username=mansi parmar, password=***, confirm_password=***, terms=1
+[2025-04-23 18:22:20] Password hashed.
+[2025-04-23 18:22:20] Check query: SELECT id FROM users WHERE username = 'mansi parmar' OR email = 'mansiparmar1619@gmail.com'
+[2025-04-23 18:22:20] Insert query: INSERT INTO users (name, email, phone, username, password, terms) 
+                     VALUES ('mansi parmar', 'mansiparmar1619@gmail.com', '9881139442', 'mansi parmar', '$2y$10$lzd.Trctg8W7hpQkgEUT7O.Pbm/vRotTaPTW54NfVc0JvhCQZPac2', 1)
+[2025-04-23 18:22:56] register.php script started
+[2025-04-23 18:22:56] Form submitted via POST
+[2025-04-23 18:22:56] Successfully connected to the database
+[2025-04-23 18:22:56] Retrieved form data: name=mansi parmar, email=mansiparmar1619@gmail.com, phone=9881139442, username=mansi parmar, terms=1
+[2025-04-23 18:22:56] Checking for duplicate username/email: SELECT id FROM users WHERE username = 'mansi parmar' OR email = 'mansiparmar1619@gmail.com'
+[2025-04-23 18:22:57] Password hashed
+[2025-04-23 18:22:57] Insert query: INSERT INTO users (name, email, phone, username, password, terms) VALUES ('mansi parmar', 'mansiparmar1619@gmail.com', '9881139442', 'mansi parmar', '$2y$10$LlWracULAVBlIfrmw4ILx.6Uu6HGR3jomFWBbvfekc3XEiYneksFe', 1)
+[2025-04-23 18:23:42] register.php script started
+[2025-04-23 18:23:42] Form submitted via POST
+[2025-04-23 18:23:42] Successfully connected to the database
+[2025-04-23 18:23:42] Retrieved form data: name=amruta, email=amruta@gmail.com, phone=9881139442, username=amruta shinde, terms=1
+[2025-04-23 18:23:42] Checking for duplicate username/email: SELECT id FROM users WHERE username = 'amruta shinde' OR email = 'amruta@gmail.com'
+[2025-04-23 18:23:42] Password hashed
+[2025-04-23 18:23:42] Insert query: INSERT INTO users (name, email, phone, username, password, terms) VALUES ('amruta', 'amruta@gmail.com', '9881139442', 'amruta shinde', '$2y$10$VAxGMw2BdYB3bInDK6JMtOSZHIyhvEG4SD2h5PGnGRsCYiO9eVZxG', 1)
+[2025-04-23 18:43:42] register.php script started
+[2025-04-23 18:43:42] Form submitted via POST
+[2025-04-23 18:43:42] Successfully connected to the database
+[2025-04-23 18:43:42] Retrieved form data: name=amruta, email=amruta@gmail.com, phone=9881139442, username=amruta shinde, terms=1
+[2025-04-23 18:43:42] Checking for duplicate username/email: SELECT id FROM users WHERE username = 'amruta shinde' OR email = 'amruta@gmail.com'
+[2025-04-23 18:43:42] Password hashed
+[2025-04-23 18:43:42] Insert query: INSERT INTO users (name, email, phone, username, password) VALUES ('amruta', 'amruta@gmail.com', '9881139442', 'amruta shinde', '$2y$10$4nFFFDka7.sjjmFT9tkER.xEJL25yMn5SyiiNVJ6lMisCRRb5Tl/e')
+[2025-04-23 18:43:42] User registered successfully
+[2025-04-23 18:43:42] Database connection closed
+[2025-04-23 18:43:42] register.php script завершено
+[2025-04-24 18:51:39] register.php script started
+[2025-04-24 18:51:39] Form submitted via POST
+[2025-04-24 18:51:39] Successfully connected to the database
+[2025-04-24 18:51:39] Retrieved form data: name=saloni, email=mansiparmar1619@gmail.com, phone=9881139442, username=saloninaik, terms=1
+[2025-04-24 18:51:39] Checking for duplicate username/email: SELECT id FROM users WHERE username = 'saloninaik' OR email = 'mansiparmar1619@gmail.com'
+[2025-04-24 18:51:39] Password hashed
+[2025-04-24 18:51:39] Insert query: INSERT INTO users (name, email, phone, username, password) VALUES ('saloni', 'mansiparmar1619@gmail.com', '9881139442', 'saloninaik', '$2y$10$aDDL9R98OrysEuWmWM9AHOOVGF9pPfwX3P3L5rezTYZjQapkLuvcy')
+[2025-04-24 18:51:39] User registered successfully
+[2025-04-24 18:51:39] Database connection closed
+[2025-04-24 18:51:39] register.php script завершено

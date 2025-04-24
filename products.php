@@ -1,0 +1,110 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('Please log in to access Products.'); window.location.href='login.html';</script>";
+    exit();
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - NP Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>NP Solutions</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#cart"><i class="fas fa-shopping-cart"></i> Cart <span id="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Our Products</h2>
+        
+        <!-- Category Navigation -->
+        <div class="category-nav">
+            <button class="category-btn active" data-category="laptops">Laptops</button>
+            <button class="category-btn" data-category="desktops">Desktops</button>
+            <button class="category-btn" data-category="accessories">Accessories</button>
+        </div>
+
+        <!-- Laptops Category -->
+        <div class="category-section" id="laptops">
+            <div class="subcategory-nav">
+                <button class="subcategory-btn active" data-subcategory="gaming">Gaming Laptops</button>
+                <button class="subcategory-btn" data-subcategory="business">Business Laptops</button>
+                <button class="subcategory-btn" data-subcategory="student">Student Laptops</button>
+            </div>
+            <div class="product-grid" id="laptops-container">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Desktops Category -->
+        <div class="category-section" id="desktops" style="display: none;">
+            <div class="product-grid" id="desktops-container">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+
+        <!-- Accessories Category -->
+        <div class="category-section" id="accessories" style="display: none;">
+            <div class="subcategory-nav">
+                <button class="subcategory-btn active" data-subcategory="mouse">Mouse</button>
+                <button class="subcategory-btn" data-subcategory="keyboard">Keyboard</button>
+                <button class="subcategory-btn" data-subcategory="storage">Storage</button>
+                <button class="subcategory-btn" data-subcategory="monitor">Monitors</button>
+            </div>
+            <div class="product-grid" id="accessories-container">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cart-total-amount">0</span></h3>
+                <button class="checkout-btn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>NP Solutions</h3>
+                <p>Your trusted partner for computer solutions and security services.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NP Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

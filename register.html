@@ -24,7 +24,7 @@
     <section class="auth-section">
         <div class="auth-container">
             <h2>Create Account</h2>
-            <form action="register.php" method="POST" id="register-form">
+            <form id="register-form">
                 <div class="form-group">
                     <label for="name">Full Name</label>
                     <input type="text" id="name" name="name" required>
@@ -47,8 +47,8 @@
                     <input type="password" id="password" name="password" required>
                 </div>
                 <div class="form-group">
-                    <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <label for="cpassword">Confirm Password</label>
+                    <input type="password" id="cpassword" name="cpassword" required>
                 </div>
                 <div class="form-group">
                     <label class="checkbox-label">
@@ -76,47 +76,33 @@
     </footer>
 
     <script>
-        // Simple client-side confirm password validation
+        // Client-side validation and form submission using fetch
         document.getElementById('register-form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault();
 
-            var password = document.getElementById('password').value;
-            var confirmPassword = document.getElementById('confirm-password').value;
-            if (password !== confirmPassword) {
+            const password = document.getElementById('password').value;
+            const cpassword = document.getElementById('cpassword').value;
+
+            if (password !== cpassword) {
                 alert('Passwords do not match!');
-                return; // Stop form submission if passwords don't match
+                return;
             }
 
-            // Get the form element
-            const form = document.getElementById('register-form');
-
-            // Create a FormData object from the form
+            const form = event.target;
             const formData = new FormData(form);
 
-            // Use fetch to send the form data to the server
             fetch('register.php', {
                 method: 'POST',
                 body: formData,
             })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text(); // Or response.json() if your server returns JSON
-            })
+            .then(response => response.text())
             .then(data => {
-                // Handle the response from the server
-                alert(data); // Display a message to the user
-
-                if (data === "Registration successful!") {
-                    window.location.href = 'index.html'; // Redirect to home on success
-                }
-                 else{
-                    console.log(data);
+                alert(data);
+                if (data.includes("Registered successfully")) {
+                    window.location.href = 'login.html';
                 }
             })
             .catch(error => {
-                // Handle errors that occurred during the fetch operation
                 console.error('Fetch error:', error);
                 alert('An error occurred during registration. Please try again.');
             });

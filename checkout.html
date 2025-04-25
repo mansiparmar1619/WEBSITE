@@ -134,25 +134,23 @@
 
     <script>
         function getCartItems() {
-            return [
-                { name: "Laptop X", price: 40000, quantity: 1 },
-                { name: "Mouse Y", price: 500, quantity: 2 }
-            ];
+            return JSON.parse(localStorage.getItem("cart")) || [];
         }
 
         const cart = getCartItems();
-        const subtotal = cart.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+        const subtotal = cart.reduce((acc, item) => acc + (item.price * (item.quantity || 1)), 0);
         const tax = +(subtotal * 0.18).toFixed(2);
         const shipping = 0;
         const total = subtotal + tax + shipping;
 
         document.getElementById('checkout-items').innerHTML = cart.map(item =>
-            `<div><span class="math-inline">\{item\.name\} \(x</span>{item.quantity}) - ₹${item.price * item.quantity}</div>`
+            `<div>${item.name} (x${item.quantity || 1}) - ₹${(item.price * (item.quantity || 1)).toLocaleString('en-IN')}</div>`
         ).join('');
-        document.getElementById('checkout-subtotal').textContent = subtotal;
-        document.getElementById('checkout-tax').textContent = tax;
-        document.getElementById('checkout-shipping').textContent = shipping;
-        document.getElementById('checkout-total').textContent = total;
+
+        document.getElementById('checkout-subtotal').textContent = subtotal.toLocaleString('en-IN');
+        document.getElementById('checkout-tax').textContent = tax.toLocaleString('en-IN');
+        document.getElementById('checkout-shipping').textContent = shipping.toLocaleString('en-IN');
+        document.getElementById('checkout-total').textContent = total.toLocaleString('en-IN');
 
         document.getElementById('cart_items').value = JSON.stringify(cart);
         document.getElementById('total_amount').value = total;
@@ -169,45 +167,12 @@
             .then(res => res.text())
             .then(data => {
                 alert("Order placed successfully!");
+                localStorage.removeItem("cart");
                 this.reset();
+                window.location.href = "index.html";
             })
             .catch(err => alert("Error placing order."));
         });
-
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const navbar = document.querySelector('.navbar');
-        const checkoutSection = document.querySelector('.checkout-section');
-
-        // Function to set the theme
-        function setTheme(isDark) {
-            if (isDark) {
-                body.classList.add('dark-mode');
-                navbar.classList.add('dark-mode');
-                checkoutSection.classList.add('dark-mode');
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-mode');
-                navbar.classList.remove('dark-mode');
-                checkoutSection.classList.remove('dark-mode');
-                localStorage.setItem('theme', 'light');
-            }
-        }
-
-        // Event listener for the theme toggle
-        themeToggle.addEventListener('change', () => {
-            setTheme(themeToggle.checked);
-        });
-
-        // Initial theme setup
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme === 'dark') {
-            themeToggle.checked = true;
-            setTheme(true);
-        } else {
-            setTheme(false);
-        }
     </script>
 </body>
 </html>

@@ -11,10 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cpassword = $_POST["cpassword"] ?? '';
 
     // Check for empty fields
-    if (empty($name) || empty($email) || empty($phone) || empty($username) || empty($password) || empty($cpassword)) {
+   /*if (empty($name) || empty($email) || empty($phone) || empty($username) || empty($password) || empty($cpassword)) {
         echo "Please fill in all required fields.";
         exit();
     }
+    */
 
     // Check if passwords match
     if ($password !== $cpassword) {
